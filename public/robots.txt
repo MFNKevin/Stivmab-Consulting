@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# URL du sitemap généré dynamiquement
+Sitemap: /functions/sitemap

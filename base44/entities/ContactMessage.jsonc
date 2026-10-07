@@ -1,0 +1,68 @@
+{
+  "name": "ContactMessage",
+  "type": "object",
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  },
+  "properties": {
+    "nom": {
+      "type": "string",
+      "description": "Nom complet du contact"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Adresse email"
+    },
+    "telephone": {
+      "type": "string",
+      "description": "Num\u00e9ro de t\u00e9l\u00e9phone (optionnel)"
+    },
+    "pays": {
+      "type": "string",
+      "description": "Pays du contact"
+    },
+    "sujet": {
+      "type": "string",
+      "description": "Sujet du message"
+    },
+    "message": {
+      "type": "string",
+      "description": "Contenu du message"
+    },
+    "consent": {
+      "type": "boolean",
+      "description": "Acceptation de recevoir des informations"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "nouveau",
+        "lu",
+        "traite"
+      ],
+      "default": "nouveau"
+    }
+  },
+  "required": [
+    "nom",
+    "email",
+    "pays",
+    "sujet",
+    "message"
+  ]
+}

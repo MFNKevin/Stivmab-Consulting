@@ -1,0 +1,53 @@
+{
+  "name": "LegalConsent",
+  "type": "object",
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nom de la personne"
+    },
+    "source": {
+      "type": "string",
+      "description": "Source du consentement (ex: Bouton WhatsApp, Formulaire de contact)"
+    },
+    "details": {
+      "type": "string",
+      "description": "D\u00e9tails suppl\u00e9mentaires (Email, Objectif)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "actif",
+        "resilie"
+      ],
+      "default": "actif",
+      "description": "Statut du consentement"
+    },
+    "revocation_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date et heure de r\u00e9siliation"
+    }
+  },
+  "required": [
+    "name",
+    "source"
+  ]
+}
